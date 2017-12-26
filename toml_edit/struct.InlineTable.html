@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `InlineTable` struct in crate `toml_edit`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, InlineTable">
+
+    <title>toml_edit::InlineTable - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc struct">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'>Struct InlineTable</p><div class="block items"><ul><li><a href="#methods">Methods</a></li><li><a href="#implementations">Trait Implementations</a></li></ul></div><p class='location'><a href='index.html'>toml_edit</a></p><script>window.sidebarCurrent = {name: 'InlineTable', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Struct <a href='index.html'>toml_edit</a>::<wbr><a class="struct" href=''>InlineTable</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../src/toml_edit/value.rs.html#64-70' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct InlineTable { /* fields omitted */ }</pre><div class='docblock'><p>Type representing a TOML inline table,
+payload of the <code>Value::InlineTable</code> variant</p>
+</div>
+                    <h2 id='methods' class='small-section-header'>
+                      Methods<a href='#methods' class='anchor'></a>
+                    </h2>
+                <h3 id='impl' class='impl'><span class='in-band'><code>impl <a class="struct" href="../toml_edit/struct.InlineTable.html" title="struct toml_edit::InlineTable">InlineTable</a></code><a href='#impl' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/toml_edit/value.rs.html#158-237' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.len' class="method"><span id='len.v' class='invisible'><code>pub fn <a href='#method.len' class='fnname'>len</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.usize.html">usize</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/toml_edit/value.rs.html#160-162' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Returns the number of key/value pairs.</p>
+</div><h4 id='method.is_empty' class="method"><span id='is_empty.v' class='invisible'><code>pub fn <a href='#method.is_empty' class='fnname'>is_empty</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/toml_edit/value.rs.html#165-167' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Returns true iff the table is empty.</p>
+</div><h4 id='method.iter' class="method"><span id='iter.v' class='invisible'><code>pub fn <a href='#method.iter' class='fnname'>iter</a>(&amp;self) -&gt; <a class="struct" href="https://doc.rust-lang.org/nightly/alloc/boxed/struct.Box.html" title="struct alloc::boxed::Box">Box</a>&lt;<a class="trait" href="https://doc.rust-lang.org/nightly/core/iter/iterator/trait.Iterator.html" title="trait core::iter::iterator::Iterator">Iterator</a>&lt;Item = <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.tuple.html">(</a>&amp;'a <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>, &amp;'a <a class="enum" href="../toml_edit/enum.Value.html" title="enum toml_edit::Value">Value</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.tuple.html">)</a>&gt; + 'a&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/toml_edit/value.rs.html#170-177' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Returns an iterator over key/value pairs.</p>
+</div><h4 id='method.sort' class="method"><span id='sort.v' class='invisible'><code>pub fn <a href='#method.sort' class='fnname'>sort</a>(&amp;mut self)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/toml_edit/value.rs.html#180-182' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Sorts the key/value pairs by key.</p>
+</div><h4 id='method.contains_key' class="method"><span id='contains_key.v' class='invisible'><code>pub fn <a href='#method.contains_key' class='fnname'>contains_key</a>(&amp;self, key: &amp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/toml_edit/value.rs.html#185-191' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Returns true iff the table contains given key.</p>
+</div><h4 id='method.merge_into' class="method"><span id='merge_into.v' class='invisible'><code>pub fn <a href='#method.merge_into' class='fnname'>merge_into</a>(&amp;mut self, other: &amp;mut <a class="struct" href="../toml_edit/struct.InlineTable.html" title="struct toml_edit::InlineTable">InlineTable</a>)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/toml_edit/value.rs.html#195-200' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Merges the key/value pairs into the <code>other</code> table leaving
+<code>self</code> empty.</p>
+</div><h4 id='method.get_or_insert' class="method"><span id='get_or_insert.v' class='invisible'><code>pub fn <a href='#method.get_or_insert' class='fnname'>get_or_insert</a>&lt;V:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/convert/trait.Into.html" title="trait core::convert::Into">Into</a>&lt;<a class="enum" href="../toml_edit/enum.Value.html" title="enum toml_edit::Value">Value</a>&gt;&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;mut self, <br>&nbsp;&nbsp;&nbsp;&nbsp;key: &amp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;value: V<br>) -&gt; &amp;mut <a class="enum" href="../toml_edit/enum.Value.html" title="enum toml_edit::Value">Value</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/toml_edit/value.rs.html#204-212' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Inserts a key/value pair if the table does not contain the key.
+Returns a mutable reference to the corresponding value.</p>
+</div><h4 id='method.fmt' class="method"><span id='fmt.v' class='invisible'><code>pub fn <a href='#method.fmt' class='fnname'>fmt</a>(&amp;mut self)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/toml_edit/value.rs.html#215-217' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Auto formats the table.</p>
+</div><h4 id='method.remove' class="method"><span id='remove.v' class='invisible'><code>pub fn <a href='#method.remove' class='fnname'>remove</a>(&amp;mut self, key: &amp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="enum" href="../toml_edit/enum.Value.html" title="enum toml_edit::Value">Value</a>&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/toml_edit/value.rs.html#220-224' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Removes a key/value pair given the key.</p>
+</div><h4 id='method.get' class="method"><span id='get.v' class='invisible'><code>pub fn <a href='#method.get' class='fnname'>get</a>(&amp;self, key: &amp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;&amp;<a class="enum" href="../toml_edit/enum.Value.html" title="enum toml_edit::Value">Value</a>&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/toml_edit/value.rs.html#227-229' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Return an optional reference to the value at the given the key.</p>
+</div><h4 id='method.get_mut' class="method"><span id='get_mut.v' class='invisible'><code>pub fn <a href='#method.get_mut' class='fnname'>get_mut</a>(&amp;mut self, key: &amp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;&amp;mut <a class="enum" href="../toml_edit/enum.Value.html" title="enum toml_edit::Value">Value</a>&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/toml_edit/value.rs.html#232-236' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Return an optional mutable reference to the value at the given the key.</p>
+</div></div>
+            <h2 id='implementations' class='small-section-header'>
+              Trait Implementations<a href='#implementations' class='anchor'></a>
+            </h2>
+        <h3 id='impl-Debug' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html" title="trait core::fmt::Debug">Debug</a> for <a class="struct" href="../toml_edit/struct.InlineTable.html" title="struct toml_edit::InlineTable">InlineTable</a></code><a href='#impl-Debug' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/toml_edit/value.rs.html#63' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.fmt-1' class="method"><span id='fmt.v-1' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt' class='fnname'>fmt</a>(&amp;self, __arg_0: &amp;mut <a class="struct" href="https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html" title="struct core::fmt::Formatter">Formatter</a>) -&gt; <a class="type" href="https://doc.rust-lang.org/nightly/core/fmt/type.Result.html" title="type core::fmt::Result">Result</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/toml_edit/value.rs.html#63' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Formats the value using the given formatter.</p>
+</div></div><h3 id='impl-Default' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/default/trait.Default.html" title="trait core::default::Default">Default</a> for <a class="struct" href="../toml_edit/struct.InlineTable.html" title="struct toml_edit::InlineTable">InlineTable</a></code><a href='#impl-Default' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/toml_edit/value.rs.html#63' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.default' class="method"><span id='default.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/default/trait.Default.html#tymethod.default' class='fnname'>default</a>() -&gt; <a class="struct" href="../toml_edit/struct.InlineTable.html" title="struct toml_edit::InlineTable">InlineTable</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/toml_edit/value.rs.html#63' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Returns the &quot;default value&quot; for a type. <a href="https://doc.rust-lang.org/nightly/core/default/trait.Default.html#tymethod.default">Read more</a></p>
+</div></div><h3 id='impl-Clone' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html" title="trait core::clone::Clone">Clone</a> for <a class="struct" href="../toml_edit/struct.InlineTable.html" title="struct toml_edit::InlineTable">InlineTable</a></code><a href='#impl-Clone' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/toml_edit/value.rs.html#63' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.clone' class="method"><span id='clone.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone' class='fnname'>clone</a>(&amp;self) -&gt; <a class="struct" href="../toml_edit/struct.InlineTable.html" title="struct toml_edit::InlineTable">InlineTable</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/toml_edit/value.rs.html#63' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Returns a copy of the value. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone">Read more</a></p>
+</div><h4 id='method.clone_from' class="method"><span id='clone_from.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from' class='fnname'>clone_from</a>(&amp;mut self, source: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>Self)</code></span><span class='out-of-band'><div class='ghost'></div><div class='since' title='Stable since Rust version 1.0.0'>1.0.0</div><a class='srclink' href='https://doc.rust-lang.org/nightly/src/core/clone.rs.html#112-114' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Performs copy-assignment from <code>source</code>. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from">Read more</a></p>
+</div></div><h3 id='impl-TableLike' class='impl'><span class='in-band'><code>impl <a class="trait" href="../toml_edit/trait.TableLike.html" title="trait toml_edit::TableLike">TableLike</a> for <a class="struct" href="../toml_edit/struct.InlineTable.html" title="struct toml_edit::InlineTable">InlineTable</a></code><a href='#impl-TableLike' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/toml_edit/value.rs.html#239-246' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.iter-1' class="method"><span id='iter.v-1' class='invisible'><code>fn <a href='../toml_edit/trait.TableLike.html#tymethod.iter' class='fnname'>iter</a>(&amp;self) -&gt; <a class="type" href="../toml_edit/type.Iter.html" title="type toml_edit::Iter">Iter</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/toml_edit/value.rs.html#240-242' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Returns an iterator over key/value pairs.</p>
+</div><h4 id='method.get-1' class="method"><span id='get.v-1' class='invisible'><code>fn <a href='../toml_edit/trait.TableLike.html#tymethod.get' class='fnname'>get</a>&lt;'s&gt;(&amp;'s self, key: &amp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;&amp;'s <a class="enum" href="../toml_edit/enum.Item.html" title="enum toml_edit::Item">Item</a>&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/toml_edit/value.rs.html#243-245' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Returns an optional reference to an item given the key.</p>
+</div><h4 id='method.len-1' class="method"><span id='len.v-1' class='invisible'><code>fn <a href='../toml_edit/trait.TableLike.html#method.len' class='fnname'>len</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.usize.html">usize</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/toml_edit/table.rs.html#361-363' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Returns the number of nonempty items.</p>
+</div><h4 id='method.is_empty-1' class="method"><span id='is_empty.v-1' class='invisible'><code>fn <a href='../toml_edit/trait.TableLike.html#method.is_empty' class='fnname'>is_empty</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/toml_edit/table.rs.html#365-367' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Returns true iff the table is empty.</p>
+</div></div><h3 id='impl-Display' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/fmt/trait.Display.html" title="trait core::fmt::Display">Display</a> for <a class="struct" href="../toml_edit/struct.InlineTable.html" title="struct toml_edit::InlineTable">InlineTable</a></code><a href='#impl-Display' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/toml_edit/display.rs.html#63-80' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.fmt-2' class="method"><span id='fmt.v-2' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Display.html#tymethod.fmt' class='fnname'>fmt</a>(&amp;self, f: &amp;mut <a class="struct" href="https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html" title="struct core::fmt::Formatter">Formatter</a>) -&gt; <a class="type" href="https://doc.rust-lang.org/nightly/core/fmt/type.Result.html" title="type core::fmt::Result">Result</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/toml_edit/display.rs.html#64-79' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Formats the value using the given formatter. <a href="https://doc.rust-lang.org/nightly/core/fmt/trait.Display.html#tymethod.fmt">Read more</a></p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../";
+        window.currentCrate = "toml_edit";
+    </script>
+    <script src="../main.js"></script>
+    <script defer src="../search-index.js"></script>
+</body>
+</html>

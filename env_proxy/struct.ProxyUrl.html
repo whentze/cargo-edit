@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `ProxyUrl` struct in crate `env_proxy`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, ProxyUrl">
+
+    <title>env_proxy::ProxyUrl - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc struct">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'>Struct ProxyUrl</p><div class="block items"><ul><li><a href="#methods">Methods</a></li></ul></div><p class='location'><a href='index.html'>env_proxy</a></p><script>window.sidebarCurrent = {name: 'ProxyUrl', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Struct <a href='index.html'>env_proxy</a>::<wbr><a class="struct" href=''>ProxyUrl</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../src/env_proxy/lib.rs.html#123' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct ProxyUrl(_, _);</pre><div class='docblock'><p>A wrapper for the proxy URL retrieved from the environment.</p>
+
+<p>This struct will wrap the raw value of the URL, which is only guaranteed to be valid UTF-8
+when returned. Various methods exist to extract the value as-is, translate it into other forms,
+and provide elements of interest.</p>
+</div>
+                    <h2 id='methods' class='small-section-header'>
+                      Methods<a href='#methods' class='anchor'></a>
+                    </h2>
+                <h3 id='impl' class='impl'><span class='in-band'><code>impl <a class="struct" href="../env_proxy/struct.ProxyUrl.html" title="struct env_proxy::ProxyUrl">ProxyUrl</a></code><a href='#impl' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/env_proxy/lib.rs.html#125-204' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.raw_value' class="method"><span id='raw_value.v' class='invisible'><code>pub fn <a href='#method.raw_value' class='fnname'>raw_value</a>(self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="https://doc.rust-lang.org/nightly/alloc/string/struct.String.html" title="struct alloc::string::String">String</a>&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/env_proxy/lib.rs.html#127-129' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Return the raw value of the proxy URL.</p>
+</div><h4 id='method.is_none' class="method"><span id='is_none.v' class='invisible'><code>pub fn <a href='#method.is_none' class='fnname'>is_none</a>(self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/env_proxy/lib.rs.html#132-134' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Return <code>true</code> if the <code>None</code> value is wrapped.</p>
+</div><h4 id='method.with_default_port' class="method"><span id='with_default_port.v' class='invisible'><code>pub fn <a href='#method.with_default_port' class='fnname'>with_default_port</a>(self, port: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a>) -&gt; Self</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/env_proxy/lib.rs.html#145-147' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Set the default port to use when transforming the raw URL value if
+the port isn&#39;t specified in the URL.</p>
+
+<p>A <code>ProxyUrl</code> instance returned by the library will have the default
+port set to <strong>8080</strong>, which corresponds to <strong>http-alt</strong> in the IANA port
+registry. This is different from <strong>curl</strong>, which uses port 1080 as the default.</p>
+
+<p>To skip the default port substitution, use <a href="#method.with_no_default_port"><code>with_no_default_port()</code></a> on the instance.</p>
+</div><h4 id='method.with_no_default_port' class="method"><span id='with_no_default_port.v' class='invisible'><code>pub fn <a href='#method.with_no_default_port' class='fnname'>with_no_default_port</a>(self) -&gt; Self</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/env_proxy/lib.rs.html#150-152' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Don&#39;t use the default port value when transforming the raw URL.</p>
+</div><h4 id='method.to_url' class="method"><span id='to_url.v' class='invisible'><code>pub fn <a href='#method.to_url' class='fnname'>to_url</a>(self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="../url/struct.Url.html" title="struct url::Url">Url</a>&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/env_proxy/lib.rs.html#165-186' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Transform the raw proxy URL into a <code>Url</code>.</p>
+
+<p>The transformation will:</p>
+
+<ul>
+<li>Parse the raw URL as a <code>Url</code>;</li>
+<li>Ensure that the host part is not empty;</li>
+<li>Use the default value for the port (or not, see <a href="#method.with_default_port"><code>with_default_port()</code></a>)
+if one is not specified in the raw URL.</li>
+<li>Ensure that the port is not empty.</li>
+</ul>
+
+<p>If any of the steps fail, <code>None</code> will be returned.</p>
+</div><h4 id='method.host_port' class="method"><span id='host_port.v' class='invisible'><code>pub fn <a href='#method.host_port' class='fnname'>host_port</a>(self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.tuple.html">(</a><a class="struct" href="https://doc.rust-lang.org/nightly/alloc/string/struct.String.html" title="struct alloc::string::String">String</a>, <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.tuple.html">)</a>&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/env_proxy/lib.rs.html#192-194' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Return the <strong>(host, port)</strong> tuple of the proxy.</p>
+
+<p>The raw URL will first be transformed into a <code>Url</code>, with any errors in the conversion
+producing a <code>None</code> (see <a href="#method.to_url"><code>to_url()</code></a>).</p>
+</div><h4 id='method.to_string' class="method"><span id='to_string.v' class='invisible'><code>pub fn <a href='#method.to_string' class='fnname'>to_string</a>(self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="https://doc.rust-lang.org/nightly/alloc/string/struct.String.html" title="struct alloc::string::String">String</a>&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/env_proxy/lib.rs.html#201-203' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Return the string representation of the proxy URL.</p>
+
+<p>The raw URL will first be transformed into a <code>Url</code>, with any errors in the conversion
+producing a <code>None</code> (see <a href="#method.to_url"><code>to_url()</code></a>).</p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../";
+        window.currentCrate = "env_proxy";
+    </script>
+    <script src="../main.js"></script>
+    <script defer src="../search-index.js"></script>
+</body>
+</html>
